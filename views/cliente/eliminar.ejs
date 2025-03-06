@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/elimina" method="post">
+        <label for="">Codigo</label>
+        <input type="text" name="codigo" value="<%= clientes.codigo %>" readonly>
+
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" value="<%= clientes.nombre %>" readonly>
+        <label for="">Apellido</label>
+        <input type="text" name="apellido" value="<%= clientes.apellido %>" readonly>
+        <label for="">Edad</label>
+        <input type="text" name="edad" value="<%= clientes.edad %>" readonly>
+
+        <label for="">Telefono</label>
+        <input type="text" name="telefono" value="<%= clientes.telefono %>" readonly>
+
+        <label for="">Ciudad</label>
+        <input type="text" name="ciudad" value="<%= clientes.ciudad %>" readonly>
+        <button type="submit">Eliminar Cliente</button>
+    </form>
+</body>
+</html>

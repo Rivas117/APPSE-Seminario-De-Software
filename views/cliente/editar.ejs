@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/edit" method="post">
+        <label for="">Codigo</label>
+        <input type="text" name="codigo" value="<%= clientes.codigo %>">
+
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" value="<%= clientes.nombre %>">
+        <label for="">Apellido</label>
+        <input type="text" name="apellido" value="<%= clientes.apellido %>">
+        <label for="">Edad</label>
+        <input type="text" name="edad" value="<%= clientes.edad %>">
+
+        <label for="">Telefono</label>
+        <input type="text" name="telefono" value="<%= clientes.telefono %>">
+
+        <label for="">Ciudad</label>
+        <input type="text" name="ciudad" value="<%= clientes.ciudad %>">
+        <button type="submit">Editar Cliente</button>
+    </form>
+</body>
+</html>

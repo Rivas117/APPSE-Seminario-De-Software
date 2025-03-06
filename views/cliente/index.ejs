@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h1>Lista de Clientes</h1>
+
+    <!-- Enlace para navegar a la página de creación de clientes -->
+    <a href="/Crear">Crear Clientes</a>
+    
+    <!-- Tabla para mostrar la lista de clientes -->
+    <table>
+        <!-- Encabezado de la tabla -->
+        <thead>
+            <tr>
+                <td>Codigo</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Edad</td>
+                <td>Telefono</td>
+                <td>Ciudad</td>
+                <td>Ver</td>
+                <td>Editar</td>
+                <td>Eliminar</td>
+            </tr>
+        </thead>
+            <!-- Cuerpo de la tabla donde se listan los clientes -->
+            <tbody>
+                <% clientes.forEach((dato)=>{ %>
+                <tr>
+                    <td><%= dato.codigo %></td>
+                    <td><%= dato.nombre %></td>
+                    <td><%= dato.apellido %></td>
+                    <td><%= dato.edad %></td>
+                    <td><%= dato.ciudad %></td>
+                    <td><%= dato.telefono %></td>
+                    <td><a href="/editar/<%= dato.codigo %>">Editar</a></td>
+                    <td><a href="/ver/<%= dato.codigo %>">Ver</a></td>
+                    <td><a href="/eliminar/<%= dato.codigo %>">Eliminar</a></td>
+                </tr>
+               <% })   %>
+            </tbody>
+    </table>
+</body>
+</html>
