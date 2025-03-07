@@ -53,7 +53,7 @@ router.post("/save",metodos.save)
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-router.get("/editar/:id",(req,res)=>{
+router.get("/clientes/editar/:id",(req,res)=>{
     const codigo = req.params.id;
     conexion.query("select * from clientes where codigo = ?",[codigo],(error,resultado)=>{
         if (error) {
@@ -70,7 +70,7 @@ router.post("/edit",metodos.edit);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-router.get("/eliminar/:id",(req,res)=>{
+router.get("/clientes/eliminar/:id",(req,res)=>{
     const codigo = req.params.id;
     conexion.query("select * from clientes where codigo = ?",[codigo],(error,resultado)=>{
         if (error) {
@@ -88,7 +88,7 @@ router.post("/elimina",metodos.elimina);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-router.get("/ver/:id",(req,res)=>{
+router.get("/clientes/ver/:id",(req,res)=>{
     const codigo = req.params.id;
     conexion.query("select * from clientes where codigo = ?",[codigo],(error,resultado)=>{
         if (error) {
@@ -103,6 +103,23 @@ router.get("/ver/:id",(req,res)=>{
 
 router.post("/view",metodos.view);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Definimos una ruta GET para '/Empleados'
@@ -120,6 +137,9 @@ router.get('/Empleados', (req, res) => {
     });
 });
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
 router.get('/Empleados2', (req, res) => {
     conexion.query("SELECT * FROM empleados", (error, resultado) => {
         if (error) {
@@ -139,14 +159,26 @@ router.get('/crear', (req, res) => {
     res.render('empleado/crear');
 });
 
-//Estamos recuperando los metodos que vamos a crear
+const metodosE = require("./controllers/meemple");
+router.post("/save",metodosE.save)
 
 
-// Definimos una ruta GET para '/Jefes'
-// Al acceder a '/Jefes', se muestra un mensaje indicando la ruta correspondiente
-router.get('/Jefes', (req, res) => {
-    res.send('Esta es la ruta de Jefes');
+router.get("/empleados/ver/:id",(req,res)=>{
+    const codigoE = req.params.id;
+    conexion.query("select * from empleados where codigoE = ?",[codigoE],(error,resultado)=>{
+        if (error) {
+            console.log(error); 
+            res.status(500).send('Error en la consulta');
+        }
+        else {
+            res.render("empleado/ver", { empleados: resultado[0]});
+        }
+    })
 });
+
+router.post("/viewE",metodosE.viewE);
+/////////////////////////////////////////////////////////////////////////////////////
+//Estamos recuperando los metodos que vamos a crear
 
 // Exportamos el router para que pueda ser utilizado en otros archivos
 // Esto permite modularizar las rutas en Express

@@ -8,7 +8,7 @@
 <body>
     <h1>Lista de empleados</h1>
 
-    <a href="/Crear">Crear Empleado</a>
+    <a href="/crear">Crear Empleado</a>
     
     <table>
         <!-- Encabezado de la tabla -->
@@ -17,9 +17,9 @@
                 <td>Codigo</td>
                 <td>Nombre</td>
                 <td>Apellido</td>
-                <td>Edad</td>
+                <td>Fecha De Creacion</td>
+                <td>Sueldo</td>
                 <td>Telefono</td>
-                <td>Ciudad</td>
                 <td>Ver</td>
                 <td>Editar</td>
                 <td>Eliminar</td>
@@ -35,9 +35,9 @@
                     <td><%= listaempleados.fechaC %></td>
                     <td><%= listaempleados.sueldoE %></td>
                     <td><%= listaempleados.telefono %></td>
-                    <td><a href="/editar/<%= listaempleados.codigoE %>">Editar</a></td>
-                    <td><a href="/ver/<%= listaempleados.codigoE %>">Ver</a></td>
-                    <td><a href="/eliminar/<%= listaempleados.codigoE %>">Eliminar</a></td>
+                    <td><a href="/empleados/ver/<%= listaempleados.codigoE %>">Ver</a></td>
+                    <td><a href="/empleados/editar/<%= listaempleados.codigoE %>">Editar</a></td>
+                    <td><a href="/empleados/eliminar/<%= listaempleados.codigoE %>">Eliminar</a></td>
                 </tr>
                <% })   %>
             </tbody>

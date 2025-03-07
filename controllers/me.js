@@ -60,7 +60,7 @@ exports.elimina = (req,res)=>{
 exports.view = (req,res)=>{
     const codigo = req.body.codigo
 
-    conexion.query("Select from clientes where codigo = ?",[codigo]
+    conexion.query("Select * from clientes where codigo = ?",[codigo]
     ,(error,resultado)=>{
         if(error){
             console.log(error)
@@ -69,3 +69,7 @@ exports.view = (req,res)=>{
         }
     });
 }
+
+
+////////////////////////////////////////////////////////////////////
+
