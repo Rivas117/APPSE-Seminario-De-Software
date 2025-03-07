@@ -7,18 +7,40 @@
 </head>
 <body>
     <h1>Lista de empleados</h1>
-    
-    codigoE
-    nombre
-    apellido
-    fechaC
-    sueldo
-    telefono
 
-    Lista Idiomas
-    codigoI
-    codigoE
-    nombreI
-    tiempo1
+    <a href="/Crear">Crear Empleado</a>
+    
+    <table>
+        <!-- Encabezado de la tabla -->
+        <thead>
+            <tr>
+                <td>Codigo</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Edad</td>
+                <td>Telefono</td>
+                <td>Ciudad</td>
+                <td>Ver</td>
+                <td>Editar</td>
+                <td>Eliminar</td>
+            </tr>
+        </thead>
+            <!-- Cuerpo de la tabla donde se listan los clientes -->
+            <tbody>
+                <% empleados.forEach((listaempleados)=>{ %>
+                <tr>
+                    <td><%= listaempleados.codigoE %></td>
+                    <td><%= listaempleados.nombreE %></td>
+                    <td><%= listaempleados.apellidoE %></td>
+                    <td><%= listaempleados.fechaC %></td>
+                    <td><%= listaempleados.sueldoE %></td>
+                    <td><%= listaempleados.telefono %></td>
+                    <td><a href="/editar/<%= listaempleados.codigoE %>">Editar</a></td>
+                    <td><a href="/ver/<%= listaempleados.codigoE %>">Ver</a></td>
+                    <td><a href="/eliminar/<%= listaempleados.codigoE %>">Eliminar</a></td>
+                </tr>
+               <% })   %>
+            </tbody>
+    </table>
 </body>
 </html>

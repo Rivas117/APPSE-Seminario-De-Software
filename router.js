@@ -108,12 +108,39 @@ router.post("/view",metodos.view);
 // Definimos una ruta GET para '/Empleados'
 // Responde con un mensaje indicando que es la ruta de Empleados
 router.get('/Empleados', (req, res) => {
-    res.send('Esta es la ruta de Empleados');
+    conexion.query("SELECT * FROM empleados", (error, resultado) => {
+        // Si hay un error en la consulta
+        if (error) {
+            console.log(error); // Muestra el error en la consola
+            res.status(500).send('Error en la consulta'); // Devuelve un estado 500 (Error del servidor) con un mensaje
+        }
+        else {
+            res.send(resultado); // Si no hay errores, envía el resultado en formato JSON
+        }
+    });
 });
 
 router.get('/Empleados2', (req, res) => {
-    res.render("empleado/index");
+    conexion.query("SELECT * FROM empleados", (error, resultado) => {
+        if (error) {
+            console.log(error); // Muestra el error en la consola
+            res.status(500).send('Error en la consulta'); // Devuelve un estado 500 (Error del servidor) con un mensaje
+        }
+        else {
+            //res.send(resultado);
+            // Variable definida pero no usada en el renderizado
+            // Renderiza una vista llamada 'cliente/index' y pasa los datos obtenidos en la consulta
+            res.render("empleado/index", { empleados: resultado });
+        } 
+    })
 });
+
+router.get('/crear', (req, res) => {
+    res.render('empleado/crear');
+});
+
+//Estamos recuperando los metodos que vamos a crear
+
 
 // Definimos una ruta GET para '/Jefes'
 // Al acceder a '/Jefes', se muestra un mensaje indicando la ruta correspondiente
