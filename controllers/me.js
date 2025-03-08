@@ -22,6 +22,20 @@ exports.save=(req,res)=>{
     });
 };
 
+
+exports.view = (req,res)=>{
+    const codigo = req.body.codigo
+
+    conexion.query("Select * from clientes where codigo = ?",[codigo]
+    ,(error,resultado)=>{
+        if(error){
+            console.log(error)
+        }else{
+            res.redirect("/cliente2")
+        }
+    });
+}
+
 exports.edit = (req,res)=>{
     const codigo =(req.body.codigo)
     const nombre=(req.body.nombre);
@@ -56,20 +70,6 @@ exports.elimina = (req,res)=>{
         }
     });
 }
-
-exports.view = (req,res)=>{
-    const codigo = req.body.codigo
-
-    conexion.query("Select * from clientes where codigo = ?",[codigo]
-    ,(error,resultado)=>{
-        if(error){
-            console.log(error)
-        }else{
-            res.redirect("/cliente2")
-        }
-    });
-}
-
 
 ////////////////////////////////////////////////////////////////////
 

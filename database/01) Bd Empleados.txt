@@ -1,0 +1,10 @@
+CREATE TABLE empleados(  
+    `codigoE` int(11) NOT NULL AUTO_INCREMENT,
+    `nombreE` varchar(100) DEFAULT NULL,
+    `apellidoE` varchar(100) DEFAULT NULL,
+    `fechaC` varchar(255) DEFAULT NULL,
+    `sueldoE` int(11) DEFAULT NULL,
+    `telefono` varchar(20) DEFAULT NULL,
+    `idiomaE` VARCHAR(100) DEFAULT NULL,
+    PRIMARY KEY (`codigoE`)
+);

@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/editE" method="post">
+    <form action="/eliminaE" method="post">
         <label for="">Codigo</label>
         <input type="text" name="codigoE" value="<%= empleados.codigoE %>" readonly>
         <label for="">Nombre</label>
@@ -16,12 +16,12 @@
         <label for="">Fecha De Creacion</label>
         <input type="text" name="fechaC" value="<%= empleados.fechaC %>">
         <label for="">Sueldo</label>
-        <input type="text" name="sueldoE" value="<%= empleados.sueldoE %>">
+        <input type="text" name="SueldoE" value="<%= empleados.sueldoE %>">
         <label for="">Telefono</label>
         <input type="text" name="telefono" value="<%= empleados.telefono %>">
         <label for="">Idioma</label>
-        <input type="text" name="idiomaE" value="<%= empleados.idiomaE %>">
-        <button type="submit">Editar Empleado</button>
+        <input type="text" name="IdiomaE" value="<%= empleados.idiomaE %>">
+        <button type="submit">Eliminar Empleado</button>
     </form>
 </body>
 </html>
